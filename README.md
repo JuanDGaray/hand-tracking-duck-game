@@ -34,7 +34,7 @@ An interactive game that uses real-time hand tracking to simulate a classic duck
 
 1. Clone the repository:
 ```bash
-git clone [https://github.com/yourusername/hand-tracking-game.git](https://github.com/JuanDGaray/hand-tracking-duck-game)
+git clone https://github.com/JuanDGaray/hand-tracking-duck-game.git
 cd hand-tracking-game
 ```
 
