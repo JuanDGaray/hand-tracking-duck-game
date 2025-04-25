@@ -7,14 +7,13 @@ An interactive game that uses real-time hand tracking to simulate a classic duck
 - Real-time hand tracking using MediaPipe
 - Interactive game interface
 - Sound effects and animations
-- Scoring system
 - Animated sprites (duck and dog)
 - Real-time collision detection
 
 ## 🛠️ Technologies Used
 
 - **Backend:**
-  - Python 3.x
+  - Python 3.9
   - Flask
   - OpenCV
   - MediaPipe
@@ -29,8 +28,7 @@ An interactive game that uses real-time hand tracking to simulate a classic duck
 
 - Python 3.8 or higher
 - Webcam
-- Modern web browser
-- Pip (Python package manager)
+
 
 ## 🔧 Installation
 
