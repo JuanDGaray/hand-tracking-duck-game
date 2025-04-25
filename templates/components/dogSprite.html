@@ -1,0 +1,40 @@
+<style>
+    #container-dog.run{
+        animation: move-container 8s linear infinite;
+        position: absolute;
+        width: 158px;
+        height: 128px;
+        bottom: 15%;
+        left: -10%;
+        z-index: 3;
+    }
+
+    #dog-image {
+        animation: dog-run 0.9s steps(5) infinite;
+        width:158px;
+        height:  128px;
+        background-image: url("static/assets/sprites/dog_run.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        backdrop-filter: scale(1.5);
+    }
+    @keyframes move-container {
+        from {
+            left: -10%;
+        }
+        to {
+            left: 110%;
+        }
+    }
+    @keyframes dog-run {
+        from {
+            background-position: -5px 0;
+        }
+        to {
+            background-position: -790px 0; /* Ajusta según el ancho total del spritesheet */
+        }
+    }
+</style>
+<div id="container-dog" class="run">
+    <div id="dog-image" class="run"></div>
+</div>

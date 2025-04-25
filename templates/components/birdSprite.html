@@ -1,0 +1,108 @@
+<style>
+    #container-bird{
+        position: absolute;
+        z-index: 1;
+    }
+    #bird-image {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    #container-bird.horizontal{
+        animation: move-container-bird 6s linear infinite;
+        width: 84px;
+        height: 106px;
+        top: 15%;
+        left: -10%;
+    }
+
+    #container-bird.horizontal-invert{
+        animation: move-container-bird 6s linear infinite reverse;
+        width: 84px;
+        height: 106px;
+        top: 15%;
+        left: -10%;
+    }
+
+
+
+    #bird-image.horizontal-invert {
+        animation: bird-horizontal 0.25s steps(3) infinite;
+        width:84px;
+        height: 106px;
+        background-image: url("static/assets/sprites/bird_horizontal3.png");
+        transform: scaleX(-1);
+    }
+
+    #bird-image.horizontal {
+        animation: bird-horizontal 0.25s steps(3) infinite;
+        width:84px;
+        height: 106px;
+        background-image: url("static/assets/sprites/bird_horizontal3.png");
+    }
+
+
+    
+    @keyframes move-container-bird {
+        from {
+            left: -10%;
+        }
+        to {
+            left: 110%;
+        }
+    }
+    @keyframes bird-horizontal {
+        from {
+            background-position: -5px 0;
+        }
+        to {
+            background-position: -252px 0; /* Ajusta según el ancho total del spritesheet */
+        }
+    }
+
+    #container-bird.stop{
+        width: 97px;
+        height: 100px;
+    }
+    #bird-image.stop {
+        animation: none; !important;
+        width: 97px;
+        height: 100px;       
+        background-image: url("static/assets/sprites/bird_stop.png");
+    }
+
+
+    #container-bird.dead-down{
+        animation: dead-container-bird 1s linear;
+        width: 64px;
+        height: 103px;
+    }
+    #bird-image.dead-down {
+        animation: dead-bird-down 0.5s steps(4) infinite;;
+        width: 64px;
+        height: 103px;      
+        background-image: url("static/assets/sprites/bird_dead.png");
+    }
+
+    @keyframes dead-container-bird {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(300%);
+        }
+    }
+    @keyframes dead-bird-down {
+        from {
+            background-position: -0px 0;
+        }
+        to {
+            background-position: -256px 0; /* Ajusta según el ancho total del spritesheet */
+        }
+    }
+
+</style>
+<div id="container-bird" class="horizontal container-bird">
+    <div id="bird-image" class="horizontal"></div>
+</div>
+         

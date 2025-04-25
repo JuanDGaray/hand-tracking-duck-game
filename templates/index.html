@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <title>Seguimiento de Manos</title>
+</head>
+<body class="p-0 m-0 d-flex flex-column justify-content-center align-items-center bg-secondary vw-100 vh-100">
+    <div class="container position-relative bg-dark p-0 m-0 rounded-4 box-shadow overflow-hidden m-2" style="height: 98vh; width: calc(90vh * 16 / 9);">
+        <img src="static/assets/img/foreground.svg" alt="Background Image" class="position-absolute top-0 start-0 z-2" style="width: 100%; height: 100%; object-fit: cover;">
+        <img src="static/assets/img/sky.webp" alt="Background Image" class="position-absolute top-0 start-0 z-0" style="width: 100%; height: 100%; object-fit: cover;">
+        <span class="spinner-grow text-warning position-absolute top-50 start-0 d-none" id="point-spinner"></span>
+        <h1
+            class="btn fs-3 fw-bold position-absolute z-2 start-50 top-50 translate-middle rounded-4 border border-2 border-dark box-shadow overflow-hidden text-center"
+            id="label-center"
+            style="width: 30%; height: auto; background-color: white;"
+        >
+            Wait to capture video...
+            <span>Take your hand in the center of the screen</span>
+        </h1>
+        {% include 'components/dogSprite.html' %}
+        {% include 'components/birdSprite.html' %}
+        <img src="static/assets/img/pointer.svg" alt="Pointer Image" class="position-absolute translate-middle z-3 opacity-50" id="pointer-image" style="width: 5%; height:auto;">
+        <div class="position-absolute z-3 bottom-0 end-0 rounded-4 border border-2 border-dark box-shadow overflow-hidden bg-dark" 
+                style="width: 20%; height: auto;">
+            <img src="/video_feed" alt="Hand Tracking Stream" class='rounded-4 border border-2 border-dark box-shadow overflow-hidden' style="width: 100%; height: auto;">
+            <span class="spinner-border spinner-border-primary text-light position-absolute bottom-0 end-0 m-1" id="loading-spinner"></span>
+            <img src="static/assets/img/hand.webp" alt="Hand Image" class="position-absolute top-50 start-50 translate-middle z-3 opacity-50" id="hand-image" style="width: 25%; height:auto;">
+        </div>
+        <div id="position" style="position: absolute; top: 10px; left: 10px; z-index: 10; color: black;">X_relative: 0%, Y_relative: 0%</div>
+        <div id="positionAbsolute" style="position: absolute; top: 40px; left: 10px; z-index: 10; color: black;">X_absolute: 0, Y_absolute: 0</div>
+        <div id="last-five-positions" style="position: absolute; top: 10px; right: 10px; z-index: 10; color: black;"></div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
